@@ -2,7 +2,7 @@ from tkinter import *
 import random
 import time
 from ball import Ball
-
+from paddle import Paddle
 
 
 tk = Tk()
@@ -13,10 +13,14 @@ canvas = Canvas(tk, width=500, height=400, bd=0, highlightthickness=0)
 canvas.pack()
 tk.update()
 
-ball = Ball(canvas, 'red')
+
+paddle = Paddle(canvas, 'blue')
+ball = Ball(canvas, paddle, 'red')
 
 while 1:
-    ball.rysuj()
+    if ball.floor == False:
+        ball.draft()
+        paddle.draft()
     tk.update_idletasks()
     tk.update()
     time.sleep(0.01)
