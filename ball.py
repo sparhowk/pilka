@@ -36,6 +36,6 @@ class Ball:
             self.x = -3
         if pos[3] >= self.canvasHeight:
             # self.y = -3*/
-            self.ground == True
+            self.floor == True
         if self.hitPaddle(pos) == True:
             self.y = -3
